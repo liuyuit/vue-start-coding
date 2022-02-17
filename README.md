@@ -3,6 +3,8 @@
 
 > https://github.com/showonne/vue2-example
 
+> http://element.eleme.io/#/component/layout 
+
 > A Vue.js project
 
 ## Build Setup

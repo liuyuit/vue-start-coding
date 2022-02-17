@@ -9,21 +9,10 @@ module.exports = {
     filename: 'build.js'
   },
   module: {
-    rules: [
+    loaders: [
       {
-        test: /\.css$/,
-        use: [
-          'vue-style-loader',
-          'css-loader'
-        ],
-      },      {
         test: /\.vue$/,
-        loader: 'vue-loader',
-        options: {
-          loaders: {
-          }
-          // other vue-loader options go here
-        }
+        loader: 'vue-loader'
       },
       {
         test: /\.js$/,
@@ -31,9 +20,17 @@ module.exports = {
         exclude: /node_modules/
       },
       {
+          test: /\.css$/,
+          loader: "style-loader!css-loader"
+      },
+      {
+        test: /\.(eot|woff|woff2|ttf)([\?]?.*)$/,
+        loader: "file-loader"
+      },
+      {
         test: /\.(png|jpg|gif|svg)$/,
         loader: 'file-loader',
-        options: {
+        query: {
           name: '[name].[ext]?[hash]'
         }
       }
